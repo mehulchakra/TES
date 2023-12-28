@@ -1,14 +1,17 @@
 import java.util.Scanner;
 
+// Kelas utama PemesananTiketApp dengan metode main untuk menjalankan program
 public class PemesananTiketApp {
     public static void main(String[] args) {
+                // Setup Scanner dan inisialisasi komponen
         Scanner scanner = new Scanner(System.in);
         AgenTiket agenTiket = new AgenTiket();
         ManajemenPemesananTiket manajemen = new ManajemenPemesananTiket(agenTiket);
 
         // Contoh menambahkan konser
         agenTiket.tambahKonser(new Konser("Konser Rock", "2023-12-10", 50000));
-
+        
+        // Loop untuk menu utama
         boolean isRunning = true;
         while (isRunning) {
             System.out.println("Menu Utama:");
@@ -18,7 +21,8 @@ public class PemesananTiketApp {
             System.out.println("4. Keluar");
             System.out.print("Pilih menu: ");
             int pilihan = scanner.nextInt();
-
+            
+            // Switch case untuk menangani pilihan menu
             switch (pilihan) {
                 case 1:
                     agenTiket.tampilkanDaftarKonser();
